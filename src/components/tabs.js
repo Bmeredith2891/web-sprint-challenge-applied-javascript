@@ -1,4 +1,14 @@
 const Tabs = (topics) => {
+  const topicsDiv = document.createElement("div");
+
+  topicsDiv.classList.add("topics");
+
+  topics.forEach(topic => {
+    const topicDiv = document.createElement("div");
+    topicDiv.classList.add("tab");
+    topicDiv.textContent = topic;
+    topicsDiv.appendChild(topicDiv);
+  })
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
@@ -13,9 +23,11 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  return topicsDiv;
 }
 
 const tabsAppender = (selector) => {
+  const URL = "http://localhost:5001/api/topics"
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.
